@@ -10,3 +10,6 @@ set -euo pipefail
 
 # Example:
 # pip install --quiet scikit-learn==1.5.2 datasets==3.2.0
+
+# Below are the libraries required for the Eye-Tracking Lab
+pip install --quiet pandas numpy seaborn matplotlib scipy transformers
