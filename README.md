@@ -76,20 +76,6 @@ The root `setup.sh`, for each lesson: creates a virtualenv (inheriting the syste
 
 Full schedule (keynotes, panel, invited lecture): [summer-school.gplsi.es/programme](https://summer-school.gplsi.es/programme/)
 
-## Running on vast.ai (organisers)
-
-We use the **PyTorch (Vast)** template with Jupyter launch mode. To make instances self-provision:
-
-1. On [cloud.vast.ai/templates](https://cloud.vast.ai/templates/), edit the *PyTorch (Vast)* template.
-2. In *Environment Variables*, add `PROVISIONING_SCRIPT` =
-   `https://raw.githubusercontent.com/EEstevanell/NLPAICS-2026-summer-school/main/provision_vast.sh`
-3. Set disk space to **150 GB** when renting (cannot be changed after creation).
-4. Create the instance(s). On first boot the script clones this repo into `/workspace` and runs `./setup.sh` for all lessons (log: `/workspace/nlpaics_setup.log`).
-
-Students then open Jupyter, browse into the lesson folder, and open `practical.ipynb` — the right kernel is pre-selected.
-
-On vast images the ML stack lives in `/venv/main`; `setup.sh` detects this and chains each lesson environment to it, so torch/CUDA are available without reinstalling.
-
 ## Troubleshooting
 
 - A lesson's setup failed? Re-run just that lesson: `./setup.sh NN`. The root script tells you exactly which lessons failed.
